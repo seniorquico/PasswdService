@@ -18,7 +18,7 @@ namespace PasswdService.Utilities
         /// </summary>
         /// <param name="maximumLength">The maximum length, inclusive. It may not be negative.</param>
         public ListStringLengthAttribute(int maximumLength)
-            : base("The length of the items in the list must be less than or equal to {1} and greater than or equal to {2}.") =>
+            : base("The length of an individual item in the {0} list must be less than or equal to {1} and greater than or equal to {2}.") =>
             this.MaximumLength = maximumLength;
 
         /// <summary>Gets the maximum acceptable length of the string items in the list.</summary>
@@ -31,7 +31,7 @@ namespace PasswdService.Utilities
         /// <param name="name">The name to include in the formatted string.</param>
         /// <returns>A string to describe the maximum acceptable length.</returns>
         public override string FormatErrorMessage(string name) =>
-            string.Format(CultureInfo.CurrentCulture, this.ErrorMessage, name, this.MaximumLength, this.MinimumLength);
+            string.Format(CultureInfo.CurrentCulture, this.ErrorMessageString, name, this.MaximumLength, this.MinimumLength);
 
         /// <summary>Override of <see cref="ValidationAttribute.IsValid(object)"/>.</summary>
         /// <remarks>
