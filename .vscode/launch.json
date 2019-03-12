@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "coreclr",
+      "request": "launch",
+      "name": "PasswdService",
+      "program": "${workspaceFolder}/src/PasswdService/bin/Debug/netcoreapp2.2/PasswdService.dll",
+      "args": ["--no-launch-profile"],
+      "cwd": "${workspaceFolder}/src/PasswdService",
+      "stopAtEntry": false,
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5000"
+      }
+    }
+  ]
+}
