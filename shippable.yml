@@ -1,0 +1,19 @@
+language: none
+
+branches:
+  only:
+    - master
+
+build:
+  pre_ci_boot:
+    image_name: "drydock/u16all"
+    image_tag: "v7.1.4"
+    options: "-v /work:/work"
+    pull: true
+  ci:
+    - "${SHIPPABLE_BUILD_DIR}/shippable/build.sh"
+
+integrations:
+  hub:
+    - integrationName: seniorquico-docker-hub
+      type: dockerRegistryLogin

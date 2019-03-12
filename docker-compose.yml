@@ -1,0 +1,8 @@
+version: '3.6'
+
+services:
+  passwd-service:
+    build:
+      context: .
+      dockerfile: src/PasswdService/Dockerfile
+    image: ${DOCKER_REGISTRY-}seniorquico/passwd-service

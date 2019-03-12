@@ -1,8 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
     <RootNamespace>PasswdService</RootNamespace>
+    <RuntimeFrameworkVersion>2.2.3</RuntimeFrameworkVersion>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 

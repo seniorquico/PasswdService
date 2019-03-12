@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  passwd-service-ci-build:
+    command: >
+      /bin/bash -c "dotnet restore --force --packages ./packages /p:DisableImplicitNuGetFallbackFolder=true &&
+                    dotnet build --configuration Release --no-restore"
+    image: mcr.microsoft.com/dotnet/core/sdk:2.2-stretch
+    volumes:
+      - .:/src
+    working_dir: /src

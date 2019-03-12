@@ -1,5 +1,7 @@
 # Passwd Service
 
+[![Shippable Status](https://api.shippable.com/projects/5c8807f4867d9e0700fe0004/badge?branch=master)](https://app.shippable.com/github/seniorquico/PasswdService/dashboard) [![Shippable Coverage](https://api.shippable.com/projects/5c8807f4867d9e0700fe0004/coverageBadge?branch=master)](https://app.shippable.com/github/seniorquico/PasswdService/dashboard) [![CodeFactor](https://www.codefactor.io/repository/github/seniorquico/passwdservice/badge)](https://www.codefactor.io/repository/github/seniorquico/passwdservice) [![MIT Licensed](https://img.shields.io/github/license/seniorquico/PasswdService.svg)](https://github.com/seniorquico/PasswdService/blob/master/LICENSE)
+
 This repository contains an example project consisting of a simple, cross-platform REST API developed using ASP.NET Core.
 
 ## Getting Started on Linux and macOS
