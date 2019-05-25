@@ -19,7 +19,7 @@ fi
 
 if [ -z ${DOCKER_COMPOSE_VERSION+x} ]
 then
-  export DOCKER_COMPOSE_VERSION=1.23.2
+  export DOCKER_COMPOSE_VERSION=1.24.0
 fi
 
 ########## Script ##########

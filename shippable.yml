@@ -7,7 +7,7 @@ branches:
 build:
   pre_ci_boot:
     image_name: "drydock/u16all"
-    image_tag: "v7.1.4"
+    image_tag: "v7.2.4"
     options: "-v /work:/work"
     pull: true
   ci:

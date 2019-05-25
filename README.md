@@ -1,12 +1,12 @@
 # Passwd Service
 
-[![Shippable Status](https://api.shippable.com/projects/5c8807f4867d9e0700fe0004/badge?branch=master)](https://app.shippable.com/github/seniorquico/PasswdService/dashboard) [![Shippable Coverage](https://api.shippable.com/projects/5c8807f4867d9e0700fe0004/coverageBadge?branch=master)](https://app.shippable.com/github/seniorquico/PasswdService/dashboard) [![CodeFactor](https://www.codefactor.io/repository/github/seniorquico/passwdservice/badge)](https://www.codefactor.io/repository/github/seniorquico/passwdservice) [![MIT Licensed](https://img.shields.io/github/license/seniorquico/PasswdService.svg)](https://github.com/seniorquico/PasswdService/blob/master/LICENSE)
+[![Shippable Status](https://api.shippable.com/projects/5c8807f4867d9e0700fe0004/badge?branch=master)](https://app.shippable.com/github/seniorquico/PasswdService/dashboard) [![Shippable Coverage](https://api.shippable.com/projects/5c8807f4867d9e0700fe0004/coverageBadge?branch=master)](https://app.shippable.com/github/seniorquico/PasswdService/dashboard) [![CodeFactor Grade](https://www.codefactor.io/repository/github/seniorquico/passwdservice/badge)](https://www.codefactor.io/repository/github/seniorquico/passwdservice) [![SonarCloud Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=seniorquico_PasswdService&metric=alert_status)](https://sonarcloud.io/dashboard?id=seniorquico_PasswdService) [![MIT Licensed](https://img.shields.io/github/license/seniorquico/PasswdService.svg)](https://github.com/seniorquico/PasswdService/blob/master/LICENSE)
 
 This repository contains an example project consisting of a simple, cross-platform REST API developed using ASP.NET Core.
 
 ## Getting Started on Linux and macOS
 
-Download and run the [.NET Core SDK installer](https://www.microsoft.com/net/download) for your platform. A version 2.2.105 or higher release of the .NET Core SDK is required. The latest available version is recommended. (For reference, the minimum version of the .NET Core SDK required may be found by inspecting the `sdk` property in the `global.json` file.)
+Download and run the [.NET Core SDK installer](https://www.microsoft.com/net/download) for your platform. A version 2.2.300 or higher release of the .NET Core SDK is required. The latest available version is recommended. (For reference, the minimum version of the .NET Core SDK required may be found by inspecting the `sdk` property in the `global.json` file.)
 
 To clone the example project repository to your home folder, run the following commands:
 
@@ -62,7 +62,7 @@ http://localhost:5000/swagger/
 
 ## Getting Started on Windows
 
-Download and run the [.NET Core SDK installer](https://www.microsoft.com/net/download?initial-os=windows) for 64-bit Windows (this example project is not supported on 32-bit Windows). A version 2.2.105 or higher release of .NET Core SDK is required. The latest available version is recommended. (For reference, the minimum version of the .NET Core SDK required may be found by inspecting the `sdk` property in the `global.json` file.)
+Download and run the [.NET Core SDK installer](https://www.microsoft.com/net/download?initial-os=windows) for 64-bit Windows (this example project is not supported on 32-bit Windows). A version 2.2.300 or higher release of .NET Core SDK is required. The latest available version is recommended. (For reference, the minimum version of the .NET Core SDK required may be found by inspecting the `sdk` property in the `global.json` file.)
 
 To clone the example project repository to your user profile folder, run the following commands:
 

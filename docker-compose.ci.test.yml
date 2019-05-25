@@ -1,18 +1,22 @@
-version: '3.6'
+version: "3.6"
 
 services:
   passwd-service-ci-test:
-# TODO: Investigate why dotnet test hangs in Docker when running the integration project.
-#   command: >
-#     /bin/bash -c "dotnet tool install dotnet-reportgenerator-globaltool --tool-path ./tools &&
-#                   dotnet test ./test/PasswdService.Tests/PasswdService.Tests.csproj --configuration Release --logger 'trx;LogFileName=../../../testresults/PasswdService.Tests.xml' --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutput='../../coverage/' /p:CoverletOutputFormat=cobertura /p:Include='[PasswdService]*' &&
-#                   mv ./coverage/coverage.cobertura.xml ./coverage/PasswdService.Tests.xml &&
-#                   dotnet test ./test/PasswdService.IntegrationTests/PasswdService.IntegrationTests.csproj --configuration Release --logger 'trx;LogFileName=../../../testresults/PasswdService.IntegrationTests.xml' --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutput='../../coverage/' /p:CoverletOutputFormat=cobertura /p:Include='[PasswdService]*' &&
-#                   mv ./coverage/coverage.cobertura.xml ./coverage/PasswdService.IntegrationTests.xml &&
-#                   ./tools/reportgenerator -reports:./coverage/PasswdService.Tests.xml;./coverage/PasswdService.IntegrationTests.xml -reporttypes:Cobertura -targetdir:./coverage/"
     command: >
-      /bin/bash -c "dotnet test ./test/PasswdService.Tests/PasswdService.Tests.csproj --configuration Release --logger 'trx;LogFileName=../../../testresults/PasswdService.Tests.xml' --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutput='../../coverage/' /p:CoverletOutputFormat=cobertura /p:Include='[PasswdService]*' &&
-                    mv ./coverage/coverage.cobertura.xml ./coverage/PasswdService.Tests.xml"
+      /bin/bash -c "dotnet tool install dotnet-reportgenerator-globaltool --tool-path ./tools &&
+                    dotnet tool install dotnet-sonarscanner --tool-path ./tools &&
+                    dotnet sonarscanner begin /k:'seniorquico_PasswdService' /o:'seniorquico-github' /d:sonar.host.url='https://sonarcloud.i' /d:sonar.login='${SONAR_LOGIN}' /d:sonar.language='cs' /d:sonar.cs.opencover.reportsPaths='./coverage/PasswdService.Tests.OpenCover.xml,./coverage/PasswdService.IntegrationTests.OpenCover.xml' &&
+                    dotnet test ./test/PasswdService.Tests/PasswdService.Tests.csproj --configuration Release --logger 'trx;LogFileName=../../../testresults/PasswdService.Tests.xml' --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutput='../../coverage/' /p:CoverletOutputFormat='cobertura,opencover' /p:Include='[PasswdService]*' &&
+                    mv ./coverage/coverage.cobertura.xml ./coverage/PasswdService.Tests.xml &&
+                    mv ./coverage/coverage.opencover.xml ./coverage/PasswdService.Tests.OpenCover.xml &&
+                    dotnet test ./test/PasswdService.IntegrationTests/PasswdService.IntegrationTests.csproj --configuration Release --logger 'trx;LogFileName=../../../testresults/PasswdService.IntegrationTests.xml' --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutput='../../coverage/' /p:CoverletOutputFormat='cobertura,opencover' /p:Include='[PasswdService]*' &&
+                    mv ./coverage/coverage.cobertura.xml ./coverage/PasswdService.IntegrationTests.xml &&
+                    mv ./coverage/coverage.opencover.xml ./coverage/PasswdService.IntegrationTests.OpenCover.xml &&
+                    dotnet sonarscanner end /d:sonar.login='${SONAR_LOGIN}' &&
+                    ./tools/reportgenerator -reports:./coverage/PasswdService.Tests.xml;./coverage/PasswdService.IntegrationTests.xml -reporttypes:Cobertura -targetdir:./coverage/"
+#   command: >
+#     /bin/bash -c "dotnet test ./test/PasswdService.Tests/PasswdService.Tests.csproj --configuration Release --logger 'trx;LogFileName=../../../testresults/PasswdService.Tests.xml' --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutput='../../coverage/' /p:CoverletOutputFormat=cobertura /p:Include='[PasswdService]*' &&
+#                   mv ./coverage/coverage.cobertura.xml ./coverage/PasswdService.Tests.xml"
     image: mcr.microsoft.com/dotnet/core/sdk:2.2-stretch
     volumes:
       - .:/src
