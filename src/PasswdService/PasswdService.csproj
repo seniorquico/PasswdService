@@ -22,7 +22,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
 
     <!-- Transitive Package Updates -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>
